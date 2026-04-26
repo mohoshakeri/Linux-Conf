@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Get Current Directory Name And Convert To Uppercase
+DIR_NAME=$(basename "$PWD")
+ZIP_NAME=$(echo "$DIR_NAME" | tr '[:lower:]' '[:upper:]')
+
+# Set Output Path To Downloads
+OUTPUT_PATH="$HOME/Downloads/${ZIP_NAME}.zip"
 
 # Initialize Exclude Arguments
 EXCLUDES=()
@@ -22,5 +28,8 @@ if [ -f .gitignore ]; then
   done < .gitignore
 fi
 
-# Create Zip Archive
-zip -r "archive.zip" . "${EXCLUDES[@]}"
+# Create Zip Archive In Downloads Folder
+zip -r "$OUTPUT_PATH" . "${EXCLUDES[@]}"
+
+# Print Result Path
+echo "Zip Created At: $OUTPUT_PATH"
