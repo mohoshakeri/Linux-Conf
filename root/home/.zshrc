@@ -12,8 +12,8 @@ echo "Hello"
 alias "vpn"="nohup sudo hiddify"
 
 # Auto Alias Scripts From ~/scripts
-if [ -d "/home/mohosh/Documents/Programming/MyLinux/scripts" ]; then
-  for script in "/home/mohosh/Documents/Programming/MyLinux/scripts"/*; do
+if [ -d "/home/mohosh/Documents/Programming/Linux-Conf/scripts" ]; then
+  for script in "/home/mohosh/Documents/Programming/Linux-Conf/scripts"/*; do
 	script_name=$(basename "$script")
 	alias_name="${script_name%.*}"
 	alias "$alias_name"="bash $script"
