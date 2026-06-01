@@ -9,8 +9,6 @@ source $ZSH/oh-my-zsh.sh
 
 echo "Hello"
 
-alias "vpn"="nohup sudo hiddify"
-
 # Auto Alias Scripts From ~/scripts
 if [ -d "/home/mohosh/Documents/Programming/Linux-Conf/scripts" ]; then
   for script in "/home/mohosh/Documents/Programming/Linux-Conf/scripts"/*; do
@@ -21,3 +19,6 @@ if [ -d "/home/mohosh/Documents/Programming/Linux-Conf/scripts" ]; then
 	echo "$alias_name Registered"
   done
 fi
+
+# Setup VPN
+alias vpn='sudo -v && sudo env V2RAY_CONFIG=XXXXX bash /home/mohosh/Documents/Programming/Linux-Conf/scripts/v2ray-tunnel.sh'
